@@ -9,19 +9,28 @@ public class lecture2 {
         String password = scr.nextLine();
         if (userName.equals("patika") && password.equals("java123"))
         System.out.println("Giriş yaptınız!");
-        else {
-            System.out.println("Bilgileriniz yanlış!");
-            System.out.println("Şifreyi sıfırla!");
-            System.out.println("Şifre giriniz:");
-             password= scr.nextLine();
-             if(password.equals("java123"))
-                 System.out.println("Giriş yaptınız tebrikler");
 
+             else if(userName.equals("patika")&& !password.equals("java123"))
+                 System.out.println("Giris Başarısız.\nGirmiş olduğunuz şifre Hatalidir...");
 
+                System.out.print("Şifrenizi Sıfırlamak ister misiniz?\nEvet icin 1'e\nHayır icin 2'ye basınız:");
+                 int secim= scr.nextInt();
 
+                 if (secim==1)
+                     System.out.println("Yeni Şifre Oluşturunuz:");
+                      String newPassword=scr.nextLine();
+                     if (newPassword.equals("java123"))
+                         System.out.println("Şifreniz Oluşturulamadı. Lütfen Başka bir şifre giriniz:");
+                         newPassword=scr.nextLine();
+                         System.out.println("Şifreniz oluşturuldu.Yeni Şifreniz:"+newPassword);
 
+                  if(secim==2)
+                     System.out.println("Guncel Şifreniz: java123");
 
+                 else
+                     System.out.println("Geçersiz giriş yaptınız..");
 
         }
     }
-}
+
+
